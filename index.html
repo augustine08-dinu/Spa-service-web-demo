@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity Wellness & Massage</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Font (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Apply the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple focus states for accessibility and polish */
+        input:focus, select:focus, textarea:focus {
+            border-color: #059669; /* emerald-600 */
+            box-shadow: 0 0 0 2px #a7f3d0; /* emerald-200 */
+            outline: none;
+        }
+        /* Custom date picker icon color */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(50%) sepia(50%) saturate(500%) hue-rotate(120deg);
+        }
+    </style>
+</head>
+<body class="font-sans bg-stone-50 text-slate-800 antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold text-emerald-700">
+                Serenity
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#services" class="text-slate-600 hover:text-emerald-700 transition-colors">Services</a>
+                <a href="#about" class="text-slate-600 hover:text-emerald-700 transition-colors">About Us</a>
+                <a href="#testimonials" class="text-slate-600 hover:text-emerald-700 transition-colors">Testimonials</a>
+                <a href="#book" class="ml-4 px-5 py-2.5 bg-emerald-600 text-white font-medium rounded-lg shadow-md hover:bg-emerald-700 transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50">
+                    Book Now
+                </a>
+            </div>
+            
+            <!-- Mobile Burger Button -->
+            <button id="burger-btn" class="md:hidden text-slate-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-stone-200">
+            <a href="#services" class="block px-6 py-3 text-slate-600 hover:bg-emerald-50">Services</a>
+            <a href="#about" class="block px-6 py-3 text-slate-600 hover:bg-emerald-50">About Us</a>
+            <a href="#testimonials" class="block px-6 py-3 text-slate-600 hover:bg-emerald-50">Testimonials</a>
+            <a href="#book" class="block px-6 py-4 text-center bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition-all">
+                Book Now
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[70vh] md:h-[85vh] text-white">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <img src="https://placehold.co/1600x900/a7f3d0/44403c?text=Relaxing+Massage+Room" 
+                     alt="A serene and relaxing massage room with soft lighting"
+                     class="w-full h-full object-cover"
+                     onerror="this.src='https://placehold.co/1600x900/a7f3d0/44403c?text=Serene+Wellness'">
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            </div>
+            
+            <!-- Hero Content -->
+            <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">
+                    Rediscover Your Inner Peace
+                </h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-stone-200 max-w-2xl mb-8">
+                    Expert massage therapy designed to heal your body, calm your mind, and restore your balance.
+                </p>
+                <a href="#book" class="px-8 py-4 bg-emerald-600 text-white font-semibold rounded-lg shadow-lg hover:bg-emerald-700 text-lg transition-all transform hover:scale-105">
+                    Schedule Your Session
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Signature Treatments</h2>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                        Find the perfect treatment to meet your wellness goals, from deep relaxation to targeted pain relief.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-stone-50 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="https://placehold.co/600x400/d1fae5/334155?text=Swedish+Massage" 
+                             alt="Swedish Massage" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.src='https://placehold.co/600x400/d1fae5/334155?text=Massage'">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-emerald-800 mb-2">Swedish Massage</h3>
+                            <p class="text-slate-600">
+                                A classic full-body massage using long, flowing strokes to reduce tension, improve circulation, and promote deep relaxation.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-stone-50 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="https://placehold.co/600x400/bbf7d0/334155?text=Deep+Tissue+Massage" 
+                             alt="Deep Tissue Massage" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.src='https://placehold.co/600x400/bbf7d0/334155?text=Massage'">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-emerald-800 mb-2">Deep Tissue Massage</h3>
+                            <p class="text-slate-600">
+                                Targets deeper layers of muscle and connective tissue. Ideal for chronic aches, pains, and stiff areas like the neck and back.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-stone-50 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="https://placehold.co/600x400/86efac/334155?text=Hot+Stone+Massage" 
+                             alt="Hot Stone Massage" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.src='https://placehold.co/600x400/86efac/334155?text=Massage'">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-emerald-800 mb-2">Hot Stone Massage</h3>
+                            <p class="text-slate-600">
+                                Heated, smooth stones are placed on the body to melt away tension, ease muscle stiffness, and increase circulation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="about" class="py-20 bg-emerald-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Your Sanctuary for Healing</h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                        We believe in a holistic approach to wellness. Our space is designed to be your peaceful escape from the everyday.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                    <!-- Feature 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-md mb-4">
+                            <!-- Icon: User -->
+                            <svg class="w-8 h-8 text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A1.75 1.75 0 0 1 18 22.5h-12a1.75 1.75 0 0 1-1.499-2.382Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Expert Therapists</h3>
+                        <p class="text-slate-600">
+                            Our certified therapists are dedicated to their craft and personalize every session to your specific needs.
+                        </p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-md mb-4">
+                            <!-- Icon: Leaf -->
+                            <svg class="w-8 h-8 text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9c.92-.001 1.668-.002 2.306-.002.106 0 .21.002.314.004V6.236c-.104.002-.208.004-.314.004C23.424 6.24 22.676 6.24 21.75 6.24V9Zm-21 0v-2.76C1.676 6.24 2.424 6.24 3.344 6.24c.106 0 .21-.002.314-.004V9.002c-.104-.002-.208-.004-.314-.004C2.424 9 1.676 9 .75 9Zm21 3.002V9.002c-.104.002-.208.004-.314.004C20.576 9 19.828 9 18.9 9v3.002c.928 0 1.676 0 2.596-.002.106 0 .21.002.314.004ZM.75 12V9.002c.104.002.208.004.314.004C2.0.9 2.748 9 3.67 9v3.002C2.748 12 2.0 12 .98 12.002c-.106 0-.21-.002-.314-.004Zm0 3v-2.76c.104-.002.208-.004.314-.004.928 0 1.676 0 2.596.002v2.76c-.92 0-1.668.002-2.306.002a5.25 5.25 0 0 1-.314-.004Zm21 0v-2.76c-.928 0-1.676 0-2.596.002v2.76c.92 0 1.668.002 2.306.002.106 0 .21-.002.314-.004ZM.75 18v-2.76c.104-.002.208-.004.314-.004C2.0.14.998 2.748 15 3.67 15v2.76c-.922 0-1.67.002-2.594.002a5.25 5.25 0 0 1-.314-.004Zm21 0v-2.76c-.928 0-1.676 0-2.596.002v2.76c.92 0 1.668.002 2.306.002.106 0 .21-.002.314-.004Zm-10.5-2.25a.75.75 0 0 0-1.5 0v.75H9a.75.75 0 0 0 0 1.5h1.5v.75a.75.75 0 0 0 1.5 0v-.75H13.5a.75.75 0 0 0 0-1.5h-1.5v-.75Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 12.75a.75.75 0 0 0-1.5 0v.75H7.5a.75.75 0 0 0 0 1.5h.75v.75a.75.75 0 0 0 1.5 0v-.75H10.5a.75.75 0 0 0 0-1.5h-.75v-.75ZM14.25 12.75a.75.75 0 0 0-1.5 0v.75H12a.75.75 0 0 0 0 1.5h.75v.75a.75.75 0 0 0 1.5 0v-.75H15a.75.75 0 0 0 0-1.5h-.75v-.75Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Calm Environment</h3>
+                        <p class="text-slate-600">
+                            From soothing music to aromatherapy, every detail is curated to create a tranquil and restorative atmosphere.
+                        </p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-md mb-4">
+                            <!-- Icon: Sparkle -->
+                            <svg class="w-8 h-8 text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Natural Products</h3>
+                        <p class="text-slate-600">
+                            We use only high-quality, organic oils and lotions that are kind to your skin and the environment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What Our Clients Say</h2>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-stone-100 p-8 rounded-lg shadow-sm">
+                        <p class="text-lg italic text-slate-700 mb-4">
+                            "This was hands down the best massage I've ever had. I left feeling completely renewed. The atmosphere is so peaceful and the therapist was incredibly skilled."
+                        </p>
+                        <p class="font-semibold text-emerald-700">— Sarah K.</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-stone-100 p-8 rounded-lg shadow-sm">
+                        <p class="text-lg italic text-slate-700 mb-4">
+                            "I came in with terrible neck and shoulder pain from work. My therapist knew exactly how to find and release the tension. I'll be a regular from now on."
+                        </p>
+                        <p class="font-semibold text-emerald-700">— David L.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="book" class="py-20 bg-stone-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Book Your Appointment</h2>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                        Fill out the form below to request your session. We'll contact you shortly to confirm your booking.
+                    </p>
+                </div>
+                
+                <div class="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-lg shadow-xl">
+                    <!-- Error Message (Hidden by default) -->
+                    <div id="error-message" class="hidden mb-6 p-4 bg-red-100 text-red-800 rounded-lg text-center">
+                        <p><strong>Oops!</strong> Something went wrong. Please try again later.</p>
+                    </div>
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="success-message" class="hidden mb-6 p-4 bg-emerald-100 text-emerald-800 rounded-lg text-center">
+                        <p><strong>Thank you!</strong> Your booking request has been sent. We will contact you soon to confirm.</p>
+                    </div>
+                
+                    <!--
+                        ==> PASTE YOUR FORMSPREE URL HERE <==
+                        Replace "https://formspree.io/f/YOUR_FORM_ID_HERE" with your unique URL from Formspree.
+                    -->
+                    <form id="booking-form" class="space-y-6" method="POST" action="https://formspree.io/f/xnngkvzp">
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full px-4 py-2 border border-stone-300 rounded-lg shadow-sm focus:border-emerald-500 focus:ring-emerald-500">
+                        </div>
+                        
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-2 border border-stone-300 rounded-lg shadow-sm focus:border-emerald-500 focus:ring-emerald-500">
+                        </div>
+                        
+                        <!-- Phone -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required
+                                   class="w-full px-4 py-2 border border-stone-300 rounded-lg shadow-sm focus:border-emerald-500 focus:ring-emerald-500">
+                        </div>
+                        
+                        <!-- Service Selection -->
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-slate-700 mb-1">Select Service</label>
+                            <select id="service" name="service" required
+                                    class="w-full px-4 py-2 border border-stone-300 rounded-lg shadow-sm bg-white focus:border-emerald-500 focus:ring-emerald-500">
+                                <option value="" disabled selected>Choose a service...</option>
+                                <option value="swedish">Swedish Massage</option>
+                                <option value="deep-tissue">Deep Tissue Massage</option>
+                                <option value="hot-stone">Hot Stone Massage</option>
+                                <option value="aromatherapy">Aromatherapy Massage</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Date & Time -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="date" class="block text-sm font-medium text-slate-700 mb-1">Preferred Date</label>
+                                <input type="date" id="date" name="date" required
+                                       class="w-full px-4 py-2 border border-stone-300 rounded-lg shadow-sm focus:border-emerald-500 focus:ring-emerald-500">
+                            </div>
+                            <div>
+                                <label for="time" class="block text-sm font-medium text-slate-700 mb-1">Preferred Time</label>
+                                <select id="time" name="time" required
+                                        class="w-full px-4 py-2 border border-stone-300 rounded-lg shadow-sm bg-white focus:border-emerald-500 focus:ring-emerald-500">
+                                    <option value="" disabled selected>Choose a time slot...</option>
+                                    <option value="morning">Morning (9am - 12pm)</option>
+                                    <option value="afternoon">Afternoon (1pm - 5pm)</option>
+                                    <option value="evening">Evening (5pm - 8pm)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div>
+                            <button type="submit"
+                                    id="submit-button"
+                                    class="w-full mt-4 px-6 py-3 bg-emerald-600 text-white font-semibold text-lg rounded-lg shadow-md hover:bg-emerald-700 transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 disabled:opacity-75">
+                                Send Booking Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-stone-300 py-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Column 1: Brand & Info -->
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-4">Serenity</h3>
+                <p class="text-stone-400 mb-4">
+                    Your personal sanctuary for wellness and rejuvenation.
+                </p>
+                <p class="text-sm">&copy; 2025 Serenity Wellness. All rights reserved.</p>
+            </div>
+            
+            <!-- Column 2: Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#services" class="hover:text-emerald-300 transition-colors">Services</a></li>
+                    <li><a href="#about" class="hover:text-emerald-300 transition-colors">About Us</a></li>
+                    <li><a href="#testimonials" class="hover:text-emerald-300 transition-colors">Testimonials</a></li>
+                    <li><a href="#book" class="hover:text-emerald-300 transition-colors">Book Now</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 3: Contact & Social -->
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Contact Us</h4>
+                <p class="mb-2">123 Wellness Way, Suite 100<br>Calmville, ST 12345</p>
+                <p class="mb-4">(123) 456-7890</p>
+                <div class="flex space-x-4">
+                    <!-- Social Icons (Inline SVG) -->
+                    <a href="#" class="text-stone-400 hover:text-emerald-300" aria-label="Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.294h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
+                    </a>
+                    <a href="#" class="text-stone-400 hover:text-emerald-300" aria-label="Instagram">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.227-1.669 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.227 1.669-4.771 4.919-4.919.058-1.266.07-1.646.07-4.85zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.947-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.441-.645 1.441-1.44s-.645-1.44-1.441-1.44z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const burgerBtn = document.getElementById('burger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        burgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Smooth Scrolling for Nav Links ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Hide mobile menu on link click
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // --- Booking Form Handler ---
+        const bookingForm = document.getElementById('booking-form');
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+        const submitButton = document.getElementById('submit-button');
+
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            const formData = new FormData(bookingForm);
+            const formAction = bookingForm.getAttribute('action');
+
+            fetch(formAction, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Show success, hide error
+                    successMessage.classList.remove('hidden');
+                    errorMessage.classList.add('hidden');
+                    bookingForm.reset();
+                    // Scroll to the success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Optional: Hide the message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.classList.add('hidden');
+                    }, 5000);
+                } else {
+                    // Show error, hide success
+                    errorMessage.classList.remove('hidden');
+                    successMessage.classList.add('hidden');
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }).catch(error => {
+                // Show error, hide success
+                errorMessage.classList.remove('hidden');
+                successMessage.classList.add('hidden');
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                console.error('Error submitting form:', error);
+            }).finally(() => {
+                // Reset button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Booking Request';
+            });
+        });
+    </script>
+</body>
+</html>
